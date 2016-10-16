@@ -33,7 +33,7 @@
             this.imageRotate = new System.Windows.Forms.Button();
             this.imageGrayscale = new System.Windows.Forms.Button();
             this.imageInvertColors = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.imageThresholding = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.imageSave = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
@@ -41,7 +41,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rotationTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.illuminanceTrackBar = new System.Windows.Forms.TrackBar();
+            this.thresholdingLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.illuminanceTrackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // imageLoad
@@ -94,18 +97,19 @@
             this.imageInvertColors.UseVisualStyleBackColor = true;
             this.imageInvertColors.Click += new System.EventHandler(this.imageInvertColors_Click);
             // 
-            // button6
+            // imageThresholding
             // 
-            this.button6.Location = new System.Drawing.Point(12, 407);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(110, 46);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.imageThresholding.Location = new System.Drawing.Point(10, 485);
+            this.imageThresholding.Name = "imageThresholding";
+            this.imageThresholding.Size = new System.Drawing.Size(110, 46);
+            this.imageThresholding.TabIndex = 5;
+            this.imageThresholding.Text = "Transformar em preto-e-branco";
+            this.imageThresholding.UseVisualStyleBackColor = true;
+            this.imageThresholding.Click += new System.EventHandler(this.imageThresholding_Click);
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(12, 459);
+            this.button7.Location = new System.Drawing.Point(10, 537);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(110, 46);
             this.button7.TabIndex = 6;
@@ -120,6 +124,7 @@
             this.imageSave.TabIndex = 7;
             this.imageSave.Text = "Salvar nova imagem";
             this.imageSave.UseVisualStyleBackColor = true;
+            this.imageSave.Click += new System.EventHandler(this.imageSave_Click);
             // 
             // openFileDialog1
             // 
@@ -151,17 +156,37 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Digite o ângulo em\r\ngraus para rotacionar\r\na imagem (horário)";
             // 
+            // illuminanceTrackBar
+            // 
+            this.illuminanceTrackBar.Location = new System.Drawing.Point(12, 451);
+            this.illuminanceTrackBar.Maximum = 255;
+            this.illuminanceTrackBar.Name = "illuminanceTrackBar";
+            this.illuminanceTrackBar.Size = new System.Drawing.Size(104, 45);
+            this.illuminanceTrackBar.TabIndex = 11;
+            this.illuminanceTrackBar.TickFrequency = 8;
+            // 
+            // thresholdingLabel
+            // 
+            this.thresholdingLabel.AutoSize = true;
+            this.thresholdingLabel.Location = new System.Drawing.Point(12, 408);
+            this.thresholdingLabel.Name = "thresholdingLabel";
+            this.thresholdingLabel.Size = new System.Drawing.Size(94, 39);
+            this.thresholdingLabel.TabIndex = 12;
+            this.thresholdingLabel.Text = "Mova o slider para\r\nselecionar o limiar\r\nde iluminância.";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.imageThresholding);
+            this.Controls.Add(this.thresholdingLabel);
+            this.Controls.Add(this.illuminanceTrackBar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rotationTextBox);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.imageSave);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.imageInvertColors);
             this.Controls.Add(this.imageGrayscale);
             this.Controls.Add(this.imageRotate);
@@ -170,6 +195,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.illuminanceTrackBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,7 +208,7 @@
         private System.Windows.Forms.Button imageRotate;
         private System.Windows.Forms.Button imageGrayscale;
         private System.Windows.Forms.Button imageInvertColors;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button imageThresholding;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button imageSave;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
@@ -190,6 +216,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox rotationTextBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TrackBar illuminanceTrackBar;
+        private System.Windows.Forms.Label thresholdingLabel;
     }
 }
 
