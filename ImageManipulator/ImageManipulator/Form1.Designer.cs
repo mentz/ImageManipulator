@@ -52,19 +52,21 @@
             this.matrixBr = new System.Windows.Forms.TextBox();
             this.matrixBg = new System.Windows.Forms.TextBox();
             this.matrixBb = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.optionsPanel = new System.Windows.Forms.Panel();
             this.imageShowMatrix = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.matrixViewer = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.illuminanceTrackBar)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.optionsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.matrixViewer)).BeginInit();
             this.SuspendLayout();
             // 
             // imageLoad
             // 
-            this.imageLoad.Location = new System.Drawing.Point(12, 13);
+            this.imageLoad.Location = new System.Drawing.Point(6, 7);
             this.imageLoad.Name = "imageLoad";
-            this.imageLoad.Size = new System.Drawing.Size(110, 36);
+            this.imageLoad.Size = new System.Drawing.Size(110, 34);
             this.imageLoad.TabIndex = 0;
             this.imageLoad.Text = "Carregar imagem";
             this.imageLoad.UseVisualStyleBackColor = true;
@@ -72,9 +74,9 @@
             // 
             // imageReset
             // 
-            this.imageReset.Location = new System.Drawing.Point(12, 53);
+            this.imageReset.Location = new System.Drawing.Point(2, 3);
             this.imageReset.Name = "imageReset";
-            this.imageReset.Size = new System.Drawing.Size(110, 36);
+            this.imageReset.Size = new System.Drawing.Size(110, 34);
             this.imageReset.TabIndex = 1;
             this.imageReset.Text = "Reverter para original";
             this.imageReset.UseVisualStyleBackColor = true;
@@ -82,9 +84,9 @@
             // 
             // imageRotate
             // 
-            this.imageRotate.Location = new System.Drawing.Point(12, 206);
+            this.imageRotate.Location = new System.Drawing.Point(2, 142);
             this.imageRotate.Name = "imageRotate";
-            this.imageRotate.Size = new System.Drawing.Size(110, 36);
+            this.imageRotate.Size = new System.Drawing.Size(110, 34);
             this.imageRotate.TabIndex = 3;
             this.imageRotate.Text = "Rotacionar";
             this.imageRotate.UseVisualStyleBackColor = true;
@@ -92,9 +94,9 @@
             // 
             // imageGrayscale
             // 
-            this.imageGrayscale.Location = new System.Drawing.Point(12, 246);
+            this.imageGrayscale.Location = new System.Drawing.Point(2, 181);
             this.imageGrayscale.Name = "imageGrayscale";
-            this.imageGrayscale.Size = new System.Drawing.Size(110, 36);
+            this.imageGrayscale.Size = new System.Drawing.Size(110, 34);
             this.imageGrayscale.TabIndex = 4;
             this.imageGrayscale.Text = "Transformar para escala de cinza";
             this.imageGrayscale.UseVisualStyleBackColor = true;
@@ -102,9 +104,9 @@
             // 
             // imageInvertColors
             // 
-            this.imageInvertColors.Location = new System.Drawing.Point(12, 286);
+            this.imageInvertColors.Location = new System.Drawing.Point(2, 219);
             this.imageInvertColors.Name = "imageInvertColors";
-            this.imageInvertColors.Size = new System.Drawing.Size(110, 36);
+            this.imageInvertColors.Size = new System.Drawing.Size(110, 34);
             this.imageInvertColors.TabIndex = 5;
             this.imageInvertColors.Text = "Inverter cores";
             this.imageInvertColors.UseVisualStyleBackColor = true;
@@ -112,9 +114,9 @@
             // 
             // imageThresholding
             // 
-            this.imageThresholding.Location = new System.Drawing.Point(12, 402);
+            this.imageThresholding.Location = new System.Drawing.Point(2, 336);
             this.imageThresholding.Name = "imageThresholding";
-            this.imageThresholding.Size = new System.Drawing.Size(110, 36);
+            this.imageThresholding.Size = new System.Drawing.Size(110, 34);
             this.imageThresholding.TabIndex = 6;
             this.imageThresholding.Text = "Transformar em preto-e-branco";
             this.imageThresholding.UseVisualStyleBackColor = true;
@@ -122,9 +124,9 @@
             // 
             // imageRGBUpdate
             // 
-            this.imageRGBUpdate.Location = new System.Drawing.Point(2, 99);
+            this.imageRGBUpdate.Location = new System.Drawing.Point(2, 473);
             this.imageRGBUpdate.Name = "imageRGBUpdate";
-            this.imageRGBUpdate.Size = new System.Drawing.Size(110, 36);
+            this.imageRGBUpdate.Size = new System.Drawing.Size(110, 34);
             this.imageRGBUpdate.TabIndex = 7;
             this.imageRGBUpdate.Text = "Atualizar valores RGB";
             this.imageRGBUpdate.UseVisualStyleBackColor = true;
@@ -132,9 +134,9 @@
             // 
             // imageSave
             // 
-            this.imageSave.Location = new System.Drawing.Point(12, 93);
+            this.imageSave.Location = new System.Drawing.Point(2, 41);
             this.imageSave.Name = "imageSave";
-            this.imageSave.Size = new System.Drawing.Size(110, 36);
+            this.imageSave.Size = new System.Drawing.Size(110, 34);
             this.imageSave.TabIndex = 2;
             this.imageSave.Text = "Salvar nova imagem";
             this.imageSave.UseVisualStyleBackColor = true;
@@ -147,24 +149,24 @@
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(130, 13);
+            this.pictureBox1.Location = new System.Drawing.Point(122, 7);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1122, 656);
+            this.pictureBox1.Size = new System.Drawing.Size(1135, 667);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
             // rotationTextBox
             // 
-            this.rotationTextBox.Location = new System.Drawing.Point(12, 182);
+            this.rotationTextBox.Location = new System.Drawing.Point(3, 118);
             this.rotationTextBox.Name = "rotationTextBox";
-            this.rotationTextBox.Size = new System.Drawing.Size(109, 20);
+            this.rotationTextBox.Size = new System.Drawing.Size(108, 20);
             this.rotationTextBox.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 137);
+            this.label1.Location = new System.Drawing.Point(3, 76);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 39);
             this.label1.TabIndex = 10;
@@ -172,7 +174,7 @@
             // 
             // illuminanceTrackBar
             // 
-            this.illuminanceTrackBar.Location = new System.Drawing.Point(12, 368);
+            this.illuminanceTrackBar.Location = new System.Drawing.Point(6, 301);
             this.illuminanceTrackBar.Maximum = 255;
             this.illuminanceTrackBar.Name = "illuminanceTrackBar";
             this.illuminanceTrackBar.Size = new System.Drawing.Size(104, 45);
@@ -182,7 +184,7 @@
             // thresholdingLabel
             // 
             this.thresholdingLabel.AutoSize = true;
-            this.thresholdingLabel.Location = new System.Drawing.Point(12, 325);
+            this.thresholdingLabel.Location = new System.Drawing.Point(6, 259);
             this.thresholdingLabel.Name = "thresholdingLabel";
             this.thresholdingLabel.Size = new System.Drawing.Size(94, 39);
             this.thresholdingLabel.TabIndex = 12;
@@ -190,7 +192,7 @@
             // 
             // matrixRr
             // 
-            this.matrixRr.Location = new System.Drawing.Point(6, 21);
+            this.matrixRr.Location = new System.Drawing.Point(6, 395);
             this.matrixRr.Name = "matrixRr";
             this.matrixRr.Size = new System.Drawing.Size(30, 20);
             this.matrixRr.TabIndex = 13;
@@ -198,7 +200,7 @@
             // 
             // matrixRg
             // 
-            this.matrixRg.Location = new System.Drawing.Point(42, 21);
+            this.matrixRg.Location = new System.Drawing.Point(42, 395);
             this.matrixRg.Name = "matrixRg";
             this.matrixRg.Size = new System.Drawing.Size(30, 20);
             this.matrixRg.TabIndex = 14;
@@ -206,7 +208,7 @@
             // 
             // matrixRb
             // 
-            this.matrixRb.Location = new System.Drawing.Point(78, 21);
+            this.matrixRb.Location = new System.Drawing.Point(78, 395);
             this.matrixRb.Name = "matrixRb";
             this.matrixRb.Size = new System.Drawing.Size(30, 20);
             this.matrixRb.TabIndex = 15;
@@ -214,7 +216,7 @@
             // 
             // matrixGr
             // 
-            this.matrixGr.Location = new System.Drawing.Point(6, 47);
+            this.matrixGr.Location = new System.Drawing.Point(6, 421);
             this.matrixGr.Name = "matrixGr";
             this.matrixGr.Size = new System.Drawing.Size(30, 20);
             this.matrixGr.TabIndex = 16;
@@ -222,7 +224,7 @@
             // 
             // matrixGg
             // 
-            this.matrixGg.Location = new System.Drawing.Point(42, 47);
+            this.matrixGg.Location = new System.Drawing.Point(42, 421);
             this.matrixGg.Name = "matrixGg";
             this.matrixGg.Size = new System.Drawing.Size(30, 20);
             this.matrixGg.TabIndex = 17;
@@ -230,7 +232,7 @@
             // 
             // matrixGb
             // 
-            this.matrixGb.Location = new System.Drawing.Point(78, 47);
+            this.matrixGb.Location = new System.Drawing.Point(78, 421);
             this.matrixGb.Name = "matrixGb";
             this.matrixGb.Size = new System.Drawing.Size(30, 20);
             this.matrixGb.TabIndex = 18;
@@ -238,7 +240,7 @@
             // 
             // matrixBr
             // 
-            this.matrixBr.Location = new System.Drawing.Point(6, 73);
+            this.matrixBr.Location = new System.Drawing.Point(6, 447);
             this.matrixBr.Name = "matrixBr";
             this.matrixBr.Size = new System.Drawing.Size(30, 20);
             this.matrixBr.TabIndex = 19;
@@ -246,7 +248,7 @@
             // 
             // matrixBg
             // 
-            this.matrixBg.Location = new System.Drawing.Point(42, 73);
+            this.matrixBg.Location = new System.Drawing.Point(42, 447);
             this.matrixBg.Name = "matrixBg";
             this.matrixBg.Size = new System.Drawing.Size(30, 20);
             this.matrixBg.TabIndex = 20;
@@ -254,76 +256,95 @@
             // 
             // matrixBb
             // 
-            this.matrixBb.Location = new System.Drawing.Point(78, 73);
+            this.matrixBb.Location = new System.Drawing.Point(78, 447);
             this.matrixBb.Name = "matrixBb";
             this.matrixBb.Size = new System.Drawing.Size(30, 20);
             this.matrixBb.TabIndex = 21;
             this.matrixBb.Text = "1";
             // 
-            // panel1
+            // optionsPanel
             // 
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.matrixRr);
-            this.panel1.Controls.Add(this.matrixBb);
-            this.panel1.Controls.Add(this.matrixRg);
-            this.panel1.Controls.Add(this.matrixBg);
-            this.panel1.Controls.Add(this.matrixRb);
-            this.panel1.Controls.Add(this.matrixBr);
-            this.panel1.Controls.Add(this.matrixGr);
-            this.panel1.Controls.Add(this.imageRGBUpdate);
-            this.panel1.Controls.Add(this.matrixGb);
-            this.panel1.Controls.Add(this.matrixGg);
-            this.panel1.Location = new System.Drawing.Point(10, 444);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(114, 137);
-            this.panel1.TabIndex = 22;
+            this.optionsPanel.Controls.Add(this.imageShowMatrix);
+            this.optionsPanel.Controls.Add(this.label2);
+            this.optionsPanel.Controls.Add(this.matrixRr);
+            this.optionsPanel.Controls.Add(this.imageThresholding);
+            this.optionsPanel.Controls.Add(this.matrixBb);
+            this.optionsPanel.Controls.Add(this.illuminanceTrackBar);
+            this.optionsPanel.Controls.Add(this.thresholdingLabel);
+            this.optionsPanel.Controls.Add(this.matrixRg);
+            this.optionsPanel.Controls.Add(this.matrixBg);
+            this.optionsPanel.Controls.Add(this.rotationTextBox);
+            this.optionsPanel.Controls.Add(this.imageInvertColors);
+            this.optionsPanel.Controls.Add(this.label1);
+            this.optionsPanel.Controls.Add(this.imageGrayscale);
+            this.optionsPanel.Controls.Add(this.matrixRb);
+            this.optionsPanel.Controls.Add(this.imageRotate);
+            this.optionsPanel.Controls.Add(this.matrixBr);
+            this.optionsPanel.Controls.Add(this.matrixGr);
+            this.optionsPanel.Controls.Add(this.imageSave);
+            this.optionsPanel.Controls.Add(this.imageRGBUpdate);
+            this.optionsPanel.Controls.Add(this.matrixGb);
+            this.optionsPanel.Controls.Add(this.matrixGg);
+            this.optionsPanel.Controls.Add(this.imageReset);
+            this.optionsPanel.Enabled = false;
+            this.optionsPanel.Location = new System.Drawing.Point(4, 43);
+            this.optionsPanel.Name = "optionsPanel";
+            this.optionsPanel.Size = new System.Drawing.Size(114, 633);
+            this.optionsPanel.TabIndex = 22;
+            // 
+            // imageShowMatrix
+            // 
+            this.imageShowMatrix.Location = new System.Drawing.Point(2, 597);
+            this.imageShowMatrix.Name = "imageShowMatrix";
+            this.imageShowMatrix.Size = new System.Drawing.Size(110, 34);
+            this.imageShowMatrix.TabIndex = 23;
+            this.imageShowMatrix.Text = "Exibir matriz";
+            this.imageShowMatrix.UseVisualStyleBackColor = true;
+            this.imageShowMatrix.Click += new System.EventHandler(this.imageShowMatrix_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 4);
+            this.label2.Location = new System.Drawing.Point(7, 378);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 13);
             this.label2.TabIndex = 22;
             this.label2.Text = "Alterar matriz RGB";
             // 
-            // imageShowMatrix
+            // matrixViewer
             // 
-            this.imageShowMatrix.Location = new System.Drawing.Point(12, 633);
-            this.imageShowMatrix.Name = "imageShowMatrix";
-            this.imageShowMatrix.Size = new System.Drawing.Size(110, 36);
-            this.imageShowMatrix.TabIndex = 23;
-            this.imageShowMatrix.Text = "Exibir matriz";
-            this.imageShowMatrix.UseVisualStyleBackColor = true;
+            this.matrixViewer.AllowUserToAddRows = false;
+            this.matrixViewer.AllowUserToDeleteRows = false;
+            this.matrixViewer.AllowUserToResizeColumns = false;
+            this.matrixViewer.AllowUserToResizeRows = false;
+            this.matrixViewer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.matrixViewer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.matrixViewer.Enabled = false;
+            this.matrixViewer.Location = new System.Drawing.Point(122, 7);
+            this.matrixViewer.Name = "matrixViewer";
+            this.matrixViewer.Size = new System.Drawing.Size(1135, 667);
+            this.matrixViewer.TabIndex = 23;
+            this.matrixViewer.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.imageShowMatrix);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.imageThresholding);
-            this.Controls.Add(this.thresholdingLabel);
-            this.Controls.Add(this.illuminanceTrackBar);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.rotationTextBox);
+            this.Controls.Add(this.matrixViewer);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.imageSave);
-            this.Controls.Add(this.imageInvertColors);
-            this.Controls.Add(this.imageGrayscale);
-            this.Controls.Add(this.imageRotate);
-            this.Controls.Add(this.imageReset);
+            this.Controls.Add(this.optionsPanel);
             this.Controls.Add(this.imageLoad);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "ImageManipulator - By Lucas Litter Mentz";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.illuminanceTrackBar)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.optionsPanel.ResumeLayout(false);
+            this.optionsPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.matrixViewer)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -353,9 +374,10 @@
         private System.Windows.Forms.TextBox matrixBr;
         private System.Windows.Forms.TextBox matrixBg;
         private System.Windows.Forms.TextBox matrixBb;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel optionsPanel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button imageShowMatrix;
+        private System.Windows.Forms.DataGridView matrixViewer;
     }
 }
 
