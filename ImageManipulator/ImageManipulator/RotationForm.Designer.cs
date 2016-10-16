@@ -41,6 +41,7 @@
             this.rotationApplyButton.TabIndex = 0;
             this.rotationApplyButton.Text = "Aplicar rotação";
             this.rotationApplyButton.UseVisualStyleBackColor = true;
+            this.rotationApplyButton.Click += new System.EventHandler(this.rotationApplyButton_Click);
             // 
             // label1
             // 
@@ -58,7 +59,7 @@
             this.textBox1.Size = new System.Drawing.Size(155, 20);
             this.textBox1.TabIndex = 2;
             // 
-            // Rotation
+            // RotationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -66,7 +67,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rotationApplyButton);
-            this.Name = "Rotation";
+            this.Name = "RotationForm";
             this.Text = "Rotação";
             this.ResumeLayout(false);
             this.PerformLayout();

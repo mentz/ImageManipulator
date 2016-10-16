@@ -32,10 +32,14 @@
             this.imageReset = new System.Windows.Forms.Button();
             this.imageRotate = new System.Windows.Forms.Button();
             this.imageGrayscale = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.imageInvertColors = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.imageSave = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // imageLoad
@@ -46,6 +50,7 @@
             this.imageLoad.TabIndex = 0;
             this.imageLoad.Text = "Carregar imagem";
             this.imageLoad.UseVisualStyleBackColor = true;
+            this.imageLoad.Click += new System.EventHandler(this.imageLoad_Click);
             // 
             // imageReset
             // 
@@ -53,8 +58,9 @@
             this.imageReset.Name = "imageReset";
             this.imageReset.Size = new System.Drawing.Size(110, 46);
             this.imageReset.TabIndex = 1;
-            this.imageReset.Text = "Reverter tudo";
+            this.imageReset.Text = "Reverter para original";
             this.imageReset.UseVisualStyleBackColor = true;
+            this.imageReset.Click += new System.EventHandler(this.imageReset_Click);
             // 
             // imageRotate
             // 
@@ -74,15 +80,17 @@
             this.imageGrayscale.TabIndex = 3;
             this.imageGrayscale.Text = "Transformar para escala de cinza";
             this.imageGrayscale.UseVisualStyleBackColor = true;
+            this.imageGrayscale.Click += new System.EventHandler(this.imageGrayscale_Click);
             // 
-            // button5
+            // imageInvertColors
             // 
-            this.button5.Location = new System.Drawing.Point(12, 273);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(110, 46);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.imageInvertColors.Location = new System.Drawing.Point(12, 273);
+            this.imageInvertColors.Name = "imageInvertColors";
+            this.imageInvertColors.Size = new System.Drawing.Size(110, 46);
+            this.imageInvertColors.TabIndex = 4;
+            this.imageInvertColors.Text = "Inverter cores";
+            this.imageInvertColors.UseVisualStyleBackColor = true;
+            this.imageInvertColors.Click += new System.EventHandler(this.imageInvertColors_Click);
             // 
             // button6
             // 
@@ -111,21 +119,37 @@
             this.imageSave.Text = "Salvar nova imagem";
             this.imageSave.UseVisualStyleBackColor = true;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(130, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1122, 656);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.imageSave);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.imageInvertColors);
             this.Controls.Add(this.imageGrayscale);
             this.Controls.Add(this.imageRotate);
             this.Controls.Add(this.imageReset);
             this.Controls.Add(this.imageLoad);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -136,10 +160,13 @@
         private System.Windows.Forms.Button imageReset;
         private System.Windows.Forms.Button imageRotate;
         private System.Windows.Forms.Button imageGrayscale;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button imageInvertColors;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button imageSave;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
