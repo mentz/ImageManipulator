@@ -14,6 +14,7 @@ namespace ImageManipulator {
     public partial class Form1: Form {
         public Bitmap originalImage;
         public Bitmap modifiableImage;
+        bool isZoom = false;
 
         public Form1() {
             InitializeComponent();
@@ -170,6 +171,18 @@ namespace ImageManipulator {
                 matrixViewer.Visible = false;
                 matrixViewer.Enabled = false;
                 imageShowMatrix.Text = "Exibir matriz";
+            }
+        }
+
+        private void imageZoomToogle_Click(object sender, EventArgs e) {
+            if (!isZoom) {
+                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                imageZoomToogle.Text = "Reduzir";
+                isZoom = true;
+            } else {
+                pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+                imageZoomToogle.Text = "Ampliar";
+                isZoom = false;
             }
         }
 

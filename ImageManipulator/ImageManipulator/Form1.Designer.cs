@@ -56,6 +56,7 @@
             this.imageShowMatrix = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.matrixViewer = new System.Windows.Forms.DataGridView();
+            this.imageZoomToogle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.illuminanceTrackBar)).BeginInit();
             this.optionsPanel.SuspendLayout();
@@ -74,7 +75,7 @@
             // 
             // imageReset
             // 
-            this.imageReset.Location = new System.Drawing.Point(2, 3);
+            this.imageReset.Location = new System.Drawing.Point(2, 2);
             this.imageReset.Name = "imageReset";
             this.imageReset.Size = new System.Drawing.Size(110, 34);
             this.imageReset.TabIndex = 1;
@@ -94,7 +95,7 @@
             // 
             // imageGrayscale
             // 
-            this.imageGrayscale.Location = new System.Drawing.Point(2, 181);
+            this.imageGrayscale.Location = new System.Drawing.Point(2, 180);
             this.imageGrayscale.Name = "imageGrayscale";
             this.imageGrayscale.Size = new System.Drawing.Size(110, 34);
             this.imageGrayscale.TabIndex = 4;
@@ -104,7 +105,7 @@
             // 
             // imageInvertColors
             // 
-            this.imageInvertColors.Location = new System.Drawing.Point(2, 219);
+            this.imageInvertColors.Location = new System.Drawing.Point(2, 218);
             this.imageInvertColors.Name = "imageInvertColors";
             this.imageInvertColors.Size = new System.Drawing.Size(110, 34);
             this.imageInvertColors.TabIndex = 5;
@@ -134,7 +135,7 @@
             // 
             // imageSave
             // 
-            this.imageSave.Location = new System.Drawing.Point(2, 41);
+            this.imageSave.Location = new System.Drawing.Point(2, 40);
             this.imageSave.Name = "imageSave";
             this.imageSave.Size = new System.Drawing.Size(110, 34);
             this.imageSave.TabIndex = 2;
@@ -264,6 +265,7 @@
             // 
             // optionsPanel
             // 
+            this.optionsPanel.Controls.Add(this.imageZoomToogle);
             this.optionsPanel.Controls.Add(this.imageShowMatrix);
             this.optionsPanel.Controls.Add(this.label2);
             this.optionsPanel.Controls.Add(this.matrixRr);
@@ -326,6 +328,16 @@
             this.matrixViewer.TabIndex = 23;
             this.matrixViewer.Visible = false;
             // 
+            // imageZoomToogle
+            // 
+            this.imageZoomToogle.Location = new System.Drawing.Point(2, 559);
+            this.imageZoomToogle.Name = "imageZoomToogle";
+            this.imageZoomToogle.Size = new System.Drawing.Size(110, 34);
+            this.imageZoomToogle.TabIndex = 24;
+            this.imageZoomToogle.Text = "Amplificar";
+            this.imageZoomToogle.UseVisualStyleBackColor = true;
+            this.imageZoomToogle.Click += new System.EventHandler(this.imageZoomToogle_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,6 +390,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button imageShowMatrix;
         private System.Windows.Forms.DataGridView matrixViewer;
+        private System.Windows.Forms.Button imageZoomToogle;
     }
 }
 
