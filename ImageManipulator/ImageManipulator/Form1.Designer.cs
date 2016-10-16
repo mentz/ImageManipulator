@@ -39,6 +39,8 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.rotationTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +66,7 @@
             // 
             // imageRotate
             // 
-            this.imageRotate.Location = new System.Drawing.Point(12, 169);
+            this.imageRotate.Location = new System.Drawing.Point(12, 251);
             this.imageRotate.Name = "imageRotate";
             this.imageRotate.Size = new System.Drawing.Size(110, 46);
             this.imageRotate.TabIndex = 2;
@@ -74,7 +76,7 @@
             // 
             // imageGrayscale
             // 
-            this.imageGrayscale.Location = new System.Drawing.Point(12, 221);
+            this.imageGrayscale.Location = new System.Drawing.Point(12, 303);
             this.imageGrayscale.Name = "imageGrayscale";
             this.imageGrayscale.Size = new System.Drawing.Size(110, 46);
             this.imageGrayscale.TabIndex = 3;
@@ -84,7 +86,7 @@
             // 
             // imageInvertColors
             // 
-            this.imageInvertColors.Location = new System.Drawing.Point(12, 273);
+            this.imageInvertColors.Location = new System.Drawing.Point(12, 355);
             this.imageInvertColors.Name = "imageInvertColors";
             this.imageInvertColors.Size = new System.Drawing.Size(110, 46);
             this.imageInvertColors.TabIndex = 4;
@@ -94,7 +96,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(12, 325);
+            this.button6.Location = new System.Drawing.Point(12, 407);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(110, 46);
             this.button6.TabIndex = 5;
@@ -103,7 +105,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(12, 377);
+            this.button7.Location = new System.Drawing.Point(12, 459);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(110, 46);
             this.button7.TabIndex = 6;
@@ -133,11 +135,29 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
+            // rotationTextBox
+            // 
+            this.rotationTextBox.Location = new System.Drawing.Point(13, 225);
+            this.rotationTextBox.Name = "rotationTextBox";
+            this.rotationTextBox.Size = new System.Drawing.Size(109, 20);
+            this.rotationTextBox.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 180);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 39);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Digite o ângulo em\r\ngraus para rotacionar\r\na imagem (horário)";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.rotationTextBox);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.imageSave);
             this.Controls.Add(this.button7);
@@ -151,6 +171,7 @@
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -167,6 +188,8 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox rotationTextBox;
+        private System.Windows.Forms.Label label1;
     }
 }
 
