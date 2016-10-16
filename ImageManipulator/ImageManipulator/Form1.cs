@@ -98,6 +98,62 @@ namespace ImageManipulator
             updatePicture(modifiableImage);
         }
 
+        private void imageThresholding_Click(object sender, EventArgs e)
+        {
+            int sx, sy;
+            sx = modifiableImage.Width;
+            sy = modifiableImage.Height;
+            Color newColor;
+            Color oldColor;
+            for (int y = 0; y < sy; y++)
+            {
+                for (int x = 0; x < sx; x++)
+                {
+                    oldColor = modifiableImage.GetPixel(x, y);
+                    if (Convert.ToInt32(oldColor.R * 0.299 + oldColor.G * 0.587 + oldColor.B * 0.114) > illuminanceTrackBar.Value)
+                    {
+                        newColor = Color.FromArgb(255, 255, 255);
+                    }
+                    else
+                    {
+                        newColor = Color.FromArgb(0, 0, 0);
+                    }
+                    modifiableImage.SetPixel(x, y, newColor);
+                }
+            }
+            updatePicture(modifiableImage);
+        }
+
+        private void imageRGBUpdate_Click(object sender, EventArgs e)
+        {
+            int sx, sy, newR, newG, newB;
+            sx = modifiableImage.Width;
+            sy = modifiableImage.Height;
+            double rr, rg, rb, gr, gg, gb, br, bg, bb;
+            rr = Convert.ToDouble(matrixRr.Text.Replace('.',','));
+            rg = Convert.ToDouble(matrixRg.Text.Replace('.', ','));
+            rb = Convert.ToDouble(matrixRb.Text.Replace('.', ','));
+            gr = Convert.ToDouble(matrixGr.Text.Replace('.', ','));
+            gg = Convert.ToDouble(matrixGg.Text.Replace('.', ','));
+            gb = Convert.ToDouble(matrixGb.Text.Replace('.', ','));
+            br = Convert.ToDouble(matrixBr.Text.Replace('.', ','));
+            bg = Convert.ToDouble(matrixBg.Text.Replace('.', ','));
+            bb = Convert.ToDouble(matrixBb.Text.Replace('.', ','));
+            for (int y = 0; y < sy; y++)
+            {
+                for (int x = 0; x < sx; x++)
+                {
+                    Color oldColor = modifiableImage.GetPixel(x, y);
+                    newR = (int) Math.Min((oldColor.R * rr + oldColor.G * rg + oldColor.B * rb), 255);
+                    newG = (int) Math.Min((oldColor.R * gr + oldColor.G * gg + oldColor.B * gb), 255);
+                    newB = (int) Math.Min((oldColor.R * br + oldColor.G * bg + oldColor.B * bb), 255);
+                    Color newColor = Color.FromArgb(newR, newG, newB);
+                    modifiableImage.SetPixel(x, y, newColor);
+                }
+            }
+            updatePicture(modifiableImage);
+        }
+
 
 
 
@@ -114,31 +170,6 @@ namespace ImageManipulator
             g.DrawImage(image, new PointF(0, 0));
 
             return rotatedBmp;
-        }
-
-        private void imageThresholding_Click(object sender, EventArgs e)
-        {
-            int sx, sy;
-            sx = modifiableImage.Width;
-            sy = modifiableImage.Height;
-            Color newColor;
-            Color oldColor;
-            for (int y = 0; y < sy; y++)
-            {
-                for (int x = 0; x < sx; x++)
-                {
-                    oldColor = modifiableImage.GetPixel(x, y);
-                    if (Convert.ToInt32(oldColor.R * 0.299 + oldColor.G * 0.587 + oldColor.B * 0.114) > illuminanceTrackBar.Value)
-                    {
-                        newColor = Color.FromArgb(255, 255, 255);
-                    } else
-                    {
-                        newColor = Color.FromArgb(0, 0, 0);
-                    }
-                    modifiableImage.SetPixel(x, y, newColor);
-                }
-            }
-            updatePicture(modifiableImage);
         }
     }
 }
