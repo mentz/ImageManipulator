@@ -13,12 +13,12 @@
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
-# [Rr]elease/ para permitir upload do executável
+#[Rr]elease/
 [Rr]eleases/
 x64/
 x86/
 bld/
-# [Bb]in/ para permitir upload do executável
+#[Bb]in/
 [Oo]bj/
 [Ll]og/
 
