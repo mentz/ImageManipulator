@@ -211,11 +211,13 @@
             // 
             // matrixRr
             // 
+            this.matrixRr.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.matrixRr.Location = new System.Drawing.Point(6, 422);
             this.matrixRr.Name = "matrixRr";
             this.matrixRr.Size = new System.Drawing.Size(30, 20);
             this.matrixRr.TabIndex = 13;
             this.matrixRr.Text = "1";
+            this.matrixRr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.matrixInput_KeyPress);
             // 
             // matrixRg
             // 
@@ -224,6 +226,7 @@
             this.matrixRg.Size = new System.Drawing.Size(30, 20);
             this.matrixRg.TabIndex = 14;
             this.matrixRg.Text = "0";
+            this.matrixRr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.matrixInput_KeyPress);
             // 
             // matrixRb
             // 
@@ -232,6 +235,7 @@
             this.matrixRb.Size = new System.Drawing.Size(30, 20);
             this.matrixRb.TabIndex = 15;
             this.matrixRb.Text = "0";
+            this.matrixRr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.matrixInput_KeyPress);
             // 
             // matrixGr
             // 
@@ -240,6 +244,7 @@
             this.matrixGr.Size = new System.Drawing.Size(30, 20);
             this.matrixGr.TabIndex = 16;
             this.matrixGr.Text = "0";
+            this.matrixRr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.matrixInput_KeyPress);
             // 
             // matrixGg
             // 
@@ -248,6 +253,7 @@
             this.matrixGg.Size = new System.Drawing.Size(30, 20);
             this.matrixGg.TabIndex = 17;
             this.matrixGg.Text = "1";
+            this.matrixRr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.matrixInput_KeyPress);
             // 
             // matrixGb
             // 
@@ -256,6 +262,7 @@
             this.matrixGb.Size = new System.Drawing.Size(30, 20);
             this.matrixGb.TabIndex = 18;
             this.matrixGb.Text = "0";
+            this.matrixRr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.matrixInput_KeyPress);
             // 
             // matrixBr
             // 
@@ -264,6 +271,7 @@
             this.matrixBr.Size = new System.Drawing.Size(30, 20);
             this.matrixBr.TabIndex = 19;
             this.matrixBr.Text = "0";
+            this.matrixRr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.matrixInput_KeyPress);
             // 
             // matrixBg
             // 
@@ -272,6 +280,7 @@
             this.matrixBg.Size = new System.Drawing.Size(30, 20);
             this.matrixBg.TabIndex = 20;
             this.matrixBg.Text = "0";
+            this.matrixRr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.matrixInput_KeyPress);
             // 
             // matrixBb
             // 
@@ -280,6 +289,7 @@
             this.matrixBb.Size = new System.Drawing.Size(30, 20);
             this.matrixBb.TabIndex = 21;
             this.matrixBb.Text = "1";
+            this.matrixRr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.matrixInput_KeyPress);
             // 
             // optionsPanel
             // 
