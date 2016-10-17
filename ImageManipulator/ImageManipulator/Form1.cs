@@ -12,8 +12,10 @@ using System.Windows.Forms;
 namespace ImageManipulator {
 
     public partial class Form1: Form {
+        public string originalFile;
         public Bitmap originalImage;
         public Bitmap modifiableImage;
+        public Bitmap secondImageForTransition;
         bool isZoom = false;
 
         public Form1() {
@@ -26,7 +28,8 @@ namespace ImageManipulator {
 
         private void imageLoad_Click(object sender, EventArgs e) {
             if (openFileDialog1.ShowDialog() == DialogResult.OK) {
-                Bitmap importedImage = new Bitmap(openFileDialog1.FileName);
+                originalFile = openFileDialog1.FileName;
+                Bitmap importedImage = new Bitmap(originalFile);
                 originalImage = importedImage;
                 modifiableImage = importedImage;
                 updatePicture(modifiableImage);
@@ -35,7 +38,7 @@ namespace ImageManipulator {
         }
 
         private void imageReset_Click(object sender, EventArgs e) {
-            modifiableImage = new Bitmap(openFileDialog1.FileName);
+            modifiableImage = new Bitmap(originalFile);
             updatePicture(modifiableImage);
         }
 
@@ -46,6 +49,19 @@ namespace ImageManipulator {
             }
         }
 
+        private void imageRotate90_Click(object sender, EventArgs e) {
+            int h = modifiableImage.Width;
+            int w = modifiableImage.Height;
+            Bitmap rotated = new Bitmap(w, h);
+            for (int i = 0; i < h; i++) {
+                for (int j = 0; j < w; j++) {
+                    rotated.SetPixel(j, i, modifiableImage.GetPixel(i, w - 1 - j));
+                }
+            }
+            modifiableImage = rotated;
+            updatePicture(modifiableImage);
+        }
+
         private void imageRotate_Click(object sender, EventArgs e) {
             if (rotationTextBox.Text == "") { }
             else {
@@ -53,6 +69,32 @@ namespace ImageManipulator {
                 modifiableImage = RotateImage(modifiableImage, angle);
                 updatePicture(modifiableImage);
             }
+        }
+
+        private void imageVertFlip_Click(object sender, EventArgs e) {
+            int w = modifiableImage.Width;
+            int h = modifiableImage.Height;
+            Bitmap fliped = new Bitmap(w, h);
+            for (int i = 0; i < h; i++) {
+                for (int j = 0; j < w; j++) {
+                    fliped.SetPixel(j, i, modifiableImage.GetPixel(j, h - 1 - i));
+                }
+            }
+            modifiableImage = fliped;
+            updatePicture(modifiableImage);
+        }
+
+        private void imageHorizFlip_Click(object sender, EventArgs e) {
+            int w = modifiableImage.Width;
+            int h = modifiableImage.Height;
+            Bitmap fliped = new Bitmap(w, h);
+            for (int i = 0; i < h; i++) {
+                for (int j = 0; j < w; j++) {
+                    fliped.SetPixel(j, i, modifiableImage.GetPixel(w - 1 - j, i));
+                }
+            }
+            modifiableImage = fliped;
+            updatePicture(modifiableImage);
         }
 
         private void imageGrayscale_Click(object sender, EventArgs e) {
@@ -132,6 +174,48 @@ namespace ImageManipulator {
             updatePicture(modifiableImage);
         }
 
+        private void transitionLoadSecond_Click(object sender, EventArgs e) {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK) {
+                Bitmap importedImage = new Bitmap(openFileDialog1.FileName);
+                secondImageForTransition = importedImage;
+                transitionApply.Enabled = true;
+                transitionSlider.Enabled = true;
+            }
+        }
+
+        private void transitionApply_Click(object sender, EventArgs e) {
+            int height = modifiableImage.Height;
+            int width = modifiableImage.Width;
+            double secondWeight = transitionSlider.Value / 100d;
+            double firstWeight = 1d - secondWeight;
+            Bitmap secondImage = new Bitmap(secondImageForTransition, width, height);
+            Color firstColor, secondColor, newColor;
+            for (int i = 0; i < height; i++) {
+                for (int j = 0; j < width; j++) {
+                    firstColor = modifiableImage.GetPixel(j, i);
+                    secondColor = secondImage.GetPixel(j, i);
+                    newColor = Color.FromArgb((int)(firstColor.R * firstWeight + secondColor.R * secondWeight),
+                                              (int)(firstColor.G * firstWeight + secondColor.G * secondWeight),
+                                              (int)(firstColor.B * firstWeight + secondColor.B * secondWeight));
+                    modifiableImage.SetPixel(j, i, newColor);
+                }
+            }
+            updatePicture(modifiableImage);
+        }
+
+        private void imageZoomToogle_Click(object sender, EventArgs e) {
+            if (!isZoom) {
+                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                imageZoomToogle.Text = "Reduzir";
+                isZoom = true;
+            }
+            else {
+                pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+                imageZoomToogle.Text = "Ampliar";
+                isZoom = false;
+            }
+        }
+
         private void imageShowMatrix_Click(object sender, EventArgs e) {
             if (matrixViewer.Visible == false) {
                 if (modifiableImage.Height > 100 || modifiableImage.Width > 100) {
@@ -174,18 +258,6 @@ namespace ImageManipulator {
             }
         }
 
-        private void imageZoomToogle_Click(object sender, EventArgs e) {
-            if (!isZoom) {
-                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                imageZoomToogle.Text = "Reduzir";
-                isZoom = true;
-            } else {
-                pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-                imageZoomToogle.Text = "Ampliar";
-                isZoom = false;
-            }
-        }
-
 
 
 
@@ -201,6 +273,10 @@ namespace ImageManipulator {
             g.DrawImage(image, new PointF(0, 0));
 
             return rotatedBmp;
+        }
+
+        private void optionsPanel_Paint(object sender, PaintEventArgs e) {
+
         }
     }
 }

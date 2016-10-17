@@ -53,21 +53,30 @@
             this.matrixBg = new System.Windows.Forms.TextBox();
             this.matrixBb = new System.Windows.Forms.TextBox();
             this.optionsPanel = new System.Windows.Forms.Panel();
+            this.imageHorizFlip = new System.Windows.Forms.Button();
+            this.imageVertFlip = new System.Windows.Forms.Button();
+            this.imageRotate90 = new System.Windows.Forms.Button();
+            this.transitionApply = new System.Windows.Forms.Button();
+            this.transitionSlider = new System.Windows.Forms.TrackBar();
+            this.transitionLabel = new System.Windows.Forms.Label();
+            this.transitionLoadSecond = new System.Windows.Forms.Button();
+            this.imageZoomToogle = new System.Windows.Forms.Button();
             this.imageShowMatrix = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.matrixViewer = new System.Windows.Forms.DataGridView();
-            this.imageZoomToogle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.illuminanceTrackBar)).BeginInit();
             this.optionsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.transitionSlider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matrixViewer)).BeginInit();
             this.SuspendLayout();
             // 
             // imageLoad
             // 
-            this.imageLoad.Location = new System.Drawing.Point(6, 7);
+            this.imageLoad.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.imageLoad.Location = new System.Drawing.Point(4, 5);
             this.imageLoad.Name = "imageLoad";
-            this.imageLoad.Size = new System.Drawing.Size(110, 34);
+            this.imageLoad.Size = new System.Drawing.Size(110, 32);
             this.imageLoad.TabIndex = 0;
             this.imageLoad.Text = "Carregar imagem";
             this.imageLoad.UseVisualStyleBackColor = true;
@@ -75,9 +84,10 @@
             // 
             // imageReset
             // 
+            this.imageReset.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.imageReset.Location = new System.Drawing.Point(2, 2);
             this.imageReset.Name = "imageReset";
-            this.imageReset.Size = new System.Drawing.Size(110, 34);
+            this.imageReset.Size = new System.Drawing.Size(110, 32);
             this.imageReset.TabIndex = 1;
             this.imageReset.Text = "Reverter para original";
             this.imageReset.UseVisualStyleBackColor = true;
@@ -85,19 +95,21 @@
             // 
             // imageRotate
             // 
-            this.imageRotate.Location = new System.Drawing.Point(2, 142);
+            this.imageRotate.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.imageRotate.Location = new System.Drawing.Point(58, 151);
             this.imageRotate.Name = "imageRotate";
-            this.imageRotate.Size = new System.Drawing.Size(110, 34);
+            this.imageRotate.Size = new System.Drawing.Size(54, 32);
             this.imageRotate.TabIndex = 3;
-            this.imageRotate.Text = "Rotacionar";
+            this.imageRotate.Text = "Inserido";
             this.imageRotate.UseVisualStyleBackColor = true;
             this.imageRotate.Click += new System.EventHandler(this.imageRotate_Click);
             // 
             // imageGrayscale
             // 
-            this.imageGrayscale.Location = new System.Drawing.Point(2, 180);
+            this.imageGrayscale.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.imageGrayscale.Location = new System.Drawing.Point(2, 221);
             this.imageGrayscale.Name = "imageGrayscale";
-            this.imageGrayscale.Size = new System.Drawing.Size(110, 34);
+            this.imageGrayscale.Size = new System.Drawing.Size(110, 32);
             this.imageGrayscale.TabIndex = 4;
             this.imageGrayscale.Text = "Transformar para escala de cinza";
             this.imageGrayscale.UseVisualStyleBackColor = true;
@@ -105,9 +117,10 @@
             // 
             // imageInvertColors
             // 
-            this.imageInvertColors.Location = new System.Drawing.Point(2, 218);
+            this.imageInvertColors.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.imageInvertColors.Location = new System.Drawing.Point(2, 256);
             this.imageInvertColors.Name = "imageInvertColors";
-            this.imageInvertColors.Size = new System.Drawing.Size(110, 34);
+            this.imageInvertColors.Size = new System.Drawing.Size(110, 32);
             this.imageInvertColors.TabIndex = 5;
             this.imageInvertColors.Text = "Inverter cores";
             this.imageInvertColors.UseVisualStyleBackColor = true;
@@ -115,9 +128,10 @@
             // 
             // imageThresholding
             // 
-            this.imageThresholding.Location = new System.Drawing.Point(2, 336);
+            this.imageThresholding.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.imageThresholding.Location = new System.Drawing.Point(2, 368);
             this.imageThresholding.Name = "imageThresholding";
-            this.imageThresholding.Size = new System.Drawing.Size(110, 34);
+            this.imageThresholding.Size = new System.Drawing.Size(110, 32);
             this.imageThresholding.TabIndex = 6;
             this.imageThresholding.Text = "Transformar em preto-e-branco";
             this.imageThresholding.UseVisualStyleBackColor = true;
@@ -125,9 +139,10 @@
             // 
             // imageRGBUpdate
             // 
-            this.imageRGBUpdate.Location = new System.Drawing.Point(2, 473);
+            this.imageRGBUpdate.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.imageRGBUpdate.Location = new System.Drawing.Point(2, 490);
             this.imageRGBUpdate.Name = "imageRGBUpdate";
-            this.imageRGBUpdate.Size = new System.Drawing.Size(110, 34);
+            this.imageRGBUpdate.Size = new System.Drawing.Size(110, 32);
             this.imageRGBUpdate.TabIndex = 7;
             this.imageRGBUpdate.Text = "Atualizar valores RGB";
             this.imageRGBUpdate.UseVisualStyleBackColor = true;
@@ -135,9 +150,10 @@
             // 
             // imageSave
             // 
-            this.imageSave.Location = new System.Drawing.Point(2, 40);
+            this.imageSave.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.imageSave.Location = new System.Drawing.Point(2, 37);
             this.imageSave.Name = "imageSave";
-            this.imageSave.Size = new System.Drawing.Size(110, 34);
+            this.imageSave.Size = new System.Drawing.Size(110, 32);
             this.imageSave.TabIndex = 2;
             this.imageSave.Text = "Salvar nova imagem";
             this.imageSave.UseVisualStyleBackColor = true;
@@ -150,16 +166,16 @@
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(122, 7);
+            this.pictureBox1.Location = new System.Drawing.Point(118, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1135, 667);
+            this.pictureBox1.Size = new System.Drawing.Size(1141, 720);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
             // rotationTextBox
             // 
-            this.rotationTextBox.Location = new System.Drawing.Point(3, 118);
+            this.rotationTextBox.Location = new System.Drawing.Point(3, 127);
             this.rotationTextBox.Name = "rotationTextBox";
             this.rotationTextBox.Size = new System.Drawing.Size(108, 20);
             this.rotationTextBox.TabIndex = 9;
@@ -167,7 +183,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 76);
+            this.label1.Location = new System.Drawing.Point(3, 85);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 39);
             this.label1.TabIndex = 10;
@@ -175,17 +191,19 @@
             // 
             // illuminanceTrackBar
             // 
-            this.illuminanceTrackBar.Location = new System.Drawing.Point(6, 301);
+            this.illuminanceTrackBar.Cursor = System.Windows.Forms.Cursors.SizeWE;
+            this.illuminanceTrackBar.Location = new System.Drawing.Point(2, 335);
             this.illuminanceTrackBar.Maximum = 255;
             this.illuminanceTrackBar.Name = "illuminanceTrackBar";
-            this.illuminanceTrackBar.Size = new System.Drawing.Size(104, 45);
+            this.illuminanceTrackBar.Size = new System.Drawing.Size(110, 45);
             this.illuminanceTrackBar.TabIndex = 11;
             this.illuminanceTrackBar.TickFrequency = 8;
+            this.illuminanceTrackBar.Value = 127;
             // 
             // thresholdingLabel
             // 
             this.thresholdingLabel.AutoSize = true;
-            this.thresholdingLabel.Location = new System.Drawing.Point(6, 259);
+            this.thresholdingLabel.Location = new System.Drawing.Point(3, 293);
             this.thresholdingLabel.Name = "thresholdingLabel";
             this.thresholdingLabel.Size = new System.Drawing.Size(94, 39);
             this.thresholdingLabel.TabIndex = 12;
@@ -193,7 +211,7 @@
             // 
             // matrixRr
             // 
-            this.matrixRr.Location = new System.Drawing.Point(6, 395);
+            this.matrixRr.Location = new System.Drawing.Point(6, 422);
             this.matrixRr.Name = "matrixRr";
             this.matrixRr.Size = new System.Drawing.Size(30, 20);
             this.matrixRr.TabIndex = 13;
@@ -201,7 +219,7 @@
             // 
             // matrixRg
             // 
-            this.matrixRg.Location = new System.Drawing.Point(42, 395);
+            this.matrixRg.Location = new System.Drawing.Point(42, 422);
             this.matrixRg.Name = "matrixRg";
             this.matrixRg.Size = new System.Drawing.Size(30, 20);
             this.matrixRg.TabIndex = 14;
@@ -209,7 +227,7 @@
             // 
             // matrixRb
             // 
-            this.matrixRb.Location = new System.Drawing.Point(78, 395);
+            this.matrixRb.Location = new System.Drawing.Point(78, 422);
             this.matrixRb.Name = "matrixRb";
             this.matrixRb.Size = new System.Drawing.Size(30, 20);
             this.matrixRb.TabIndex = 15;
@@ -217,7 +235,7 @@
             // 
             // matrixGr
             // 
-            this.matrixGr.Location = new System.Drawing.Point(6, 421);
+            this.matrixGr.Location = new System.Drawing.Point(6, 445);
             this.matrixGr.Name = "matrixGr";
             this.matrixGr.Size = new System.Drawing.Size(30, 20);
             this.matrixGr.TabIndex = 16;
@@ -225,7 +243,7 @@
             // 
             // matrixGg
             // 
-            this.matrixGg.Location = new System.Drawing.Point(42, 421);
+            this.matrixGg.Location = new System.Drawing.Point(42, 445);
             this.matrixGg.Name = "matrixGg";
             this.matrixGg.Size = new System.Drawing.Size(30, 20);
             this.matrixGg.TabIndex = 17;
@@ -233,7 +251,7 @@
             // 
             // matrixGb
             // 
-            this.matrixGb.Location = new System.Drawing.Point(78, 421);
+            this.matrixGb.Location = new System.Drawing.Point(78, 445);
             this.matrixGb.Name = "matrixGb";
             this.matrixGb.Size = new System.Drawing.Size(30, 20);
             this.matrixGb.TabIndex = 18;
@@ -241,7 +259,7 @@
             // 
             // matrixBr
             // 
-            this.matrixBr.Location = new System.Drawing.Point(6, 447);
+            this.matrixBr.Location = new System.Drawing.Point(6, 468);
             this.matrixBr.Name = "matrixBr";
             this.matrixBr.Size = new System.Drawing.Size(30, 20);
             this.matrixBr.TabIndex = 19;
@@ -249,7 +267,7 @@
             // 
             // matrixBg
             // 
-            this.matrixBg.Location = new System.Drawing.Point(42, 447);
+            this.matrixBg.Location = new System.Drawing.Point(42, 468);
             this.matrixBg.Name = "matrixBg";
             this.matrixBg.Size = new System.Drawing.Size(30, 20);
             this.matrixBg.TabIndex = 20;
@@ -257,7 +275,7 @@
             // 
             // matrixBb
             // 
-            this.matrixBb.Location = new System.Drawing.Point(78, 447);
+            this.matrixBb.Location = new System.Drawing.Point(78, 468);
             this.matrixBb.Name = "matrixBb";
             this.matrixBb.Size = new System.Drawing.Size(30, 20);
             this.matrixBb.TabIndex = 21;
@@ -265,6 +283,13 @@
             // 
             // optionsPanel
             // 
+            this.optionsPanel.Controls.Add(this.imageHorizFlip);
+            this.optionsPanel.Controls.Add(this.imageVertFlip);
+            this.optionsPanel.Controls.Add(this.imageRotate90);
+            this.optionsPanel.Controls.Add(this.transitionApply);
+            this.optionsPanel.Controls.Add(this.transitionSlider);
+            this.optionsPanel.Controls.Add(this.transitionLabel);
+            this.optionsPanel.Controls.Add(this.transitionLoadSecond);
             this.optionsPanel.Controls.Add(this.imageZoomToogle);
             this.optionsPanel.Controls.Add(this.imageShowMatrix);
             this.optionsPanel.Controls.Add(this.label2);
@@ -289,16 +314,106 @@
             this.optionsPanel.Controls.Add(this.matrixGg);
             this.optionsPanel.Controls.Add(this.imageReset);
             this.optionsPanel.Enabled = false;
-            this.optionsPanel.Location = new System.Drawing.Point(4, 43);
+            this.optionsPanel.Location = new System.Drawing.Point(2, 38);
             this.optionsPanel.Name = "optionsPanel";
-            this.optionsPanel.Size = new System.Drawing.Size(114, 633);
+            this.optionsPanel.Size = new System.Drawing.Size(114, 690);
             this.optionsPanel.TabIndex = 22;
+            this.optionsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.optionsPanel_Paint);
+            // 
+            // imageHorizFlip
+            // 
+            this.imageHorizFlip.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.imageHorizFlip.Location = new System.Drawing.Point(58, 186);
+            this.imageHorizFlip.Name = "imageHorizFlip";
+            this.imageHorizFlip.Size = new System.Drawing.Size(54, 32);
+            this.imageHorizFlip.TabIndex = 31;
+            this.imageHorizFlip.Text = "Flip Horizontal";
+            this.imageHorizFlip.UseVisualStyleBackColor = true;
+            this.imageHorizFlip.Click += new System.EventHandler(this.imageHorizFlip_Click);
+            // 
+            // imageVertFlip
+            // 
+            this.imageVertFlip.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.imageVertFlip.Location = new System.Drawing.Point(2, 186);
+            this.imageVertFlip.Name = "imageVertFlip";
+            this.imageVertFlip.Size = new System.Drawing.Size(54, 32);
+            this.imageVertFlip.TabIndex = 30;
+            this.imageVertFlip.Text = "Flip Vertical";
+            this.imageVertFlip.UseVisualStyleBackColor = true;
+            this.imageVertFlip.Click += new System.EventHandler(this.imageVertFlip_Click);
+            // 
+            // imageRotate90
+            // 
+            this.imageRotate90.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.imageRotate90.Location = new System.Drawing.Point(2, 151);
+            this.imageRotate90.Name = "imageRotate90";
+            this.imageRotate90.Size = new System.Drawing.Size(54, 32);
+            this.imageRotate90.TabIndex = 29;
+            this.imageRotate90.Text = "+90°";
+            this.imageRotate90.UseVisualStyleBackColor = true;
+            this.imageRotate90.Click += new System.EventHandler(this.imageRotate90_Click);
+            // 
+            // transitionApply
+            // 
+            this.transitionApply.Enabled = false;
+            this.transitionApply.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.transitionApply.Location = new System.Drawing.Point(2, 601);
+            this.transitionApply.Name = "transitionApply";
+            this.transitionApply.Size = new System.Drawing.Size(110, 32);
+            this.transitionApply.TabIndex = 25;
+            this.transitionApply.Text = "Aplicar transição";
+            this.transitionApply.UseVisualStyleBackColor = true;
+            this.transitionApply.Click += new System.EventHandler(this.transitionApply_Click);
+            // 
+            // transitionSlider
+            // 
+            this.transitionSlider.Cursor = System.Windows.Forms.Cursors.SizeWE;
+            this.transitionSlider.Enabled = false;
+            this.transitionSlider.Location = new System.Drawing.Point(2, 572);
+            this.transitionSlider.Maximum = 100;
+            this.transitionSlider.Name = "transitionSlider";
+            this.transitionSlider.Size = new System.Drawing.Size(110, 45);
+            this.transitionSlider.TabIndex = 28;
+            this.transitionSlider.TickFrequency = 8;
+            this.transitionSlider.Value = 50;
+            // 
+            // transitionLabel
+            // 
+            this.transitionLabel.AutoSize = true;
+            this.transitionLabel.Location = new System.Drawing.Point(3, 524);
+            this.transitionLabel.Name = "transitionLabel";
+            this.transitionLabel.Size = new System.Drawing.Size(108, 13);
+            this.transitionLabel.TabIndex = 27;
+            this.transitionLabel.Text = "Transição de imagem";
+            // 
+            // transitionLoadSecond
+            // 
+            this.transitionLoadSecond.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.transitionLoadSecond.Location = new System.Drawing.Point(2, 539);
+            this.transitionLoadSecond.Name = "transitionLoadSecond";
+            this.transitionLoadSecond.Size = new System.Drawing.Size(110, 32);
+            this.transitionLoadSecond.TabIndex = 26;
+            this.transitionLoadSecond.Text = "Carregar imagem secundária";
+            this.transitionLoadSecond.UseVisualStyleBackColor = true;
+            this.transitionLoadSecond.Click += new System.EventHandler(this.transitionLoadSecond_Click);
+            // 
+            // imageZoomToogle
+            // 
+            this.imageZoomToogle.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.imageZoomToogle.Location = new System.Drawing.Point(2, 656);
+            this.imageZoomToogle.Name = "imageZoomToogle";
+            this.imageZoomToogle.Size = new System.Drawing.Size(54, 32);
+            this.imageZoomToogle.TabIndex = 24;
+            this.imageZoomToogle.Text = "Amplificar";
+            this.imageZoomToogle.UseVisualStyleBackColor = true;
+            this.imageZoomToogle.Click += new System.EventHandler(this.imageZoomToogle_Click);
             // 
             // imageShowMatrix
             // 
-            this.imageShowMatrix.Location = new System.Drawing.Point(2, 597);
+            this.imageShowMatrix.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.imageShowMatrix.Location = new System.Drawing.Point(58, 656);
             this.imageShowMatrix.Name = "imageShowMatrix";
-            this.imageShowMatrix.Size = new System.Drawing.Size(110, 34);
+            this.imageShowMatrix.Size = new System.Drawing.Size(54, 32);
             this.imageShowMatrix.TabIndex = 23;
             this.imageShowMatrix.Text = "Exibir matriz";
             this.imageShowMatrix.UseVisualStyleBackColor = true;
@@ -307,7 +422,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 378);
+            this.label2.Location = new System.Drawing.Point(3, 404);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 13);
             this.label2.TabIndex = 22;
@@ -322,31 +437,21 @@
             this.matrixViewer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.matrixViewer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.matrixViewer.Enabled = false;
-            this.matrixViewer.Location = new System.Drawing.Point(122, 7);
+            this.matrixViewer.Location = new System.Drawing.Point(118, 5);
             this.matrixViewer.Name = "matrixViewer";
-            this.matrixViewer.Size = new System.Drawing.Size(1135, 667);
+            this.matrixViewer.Size = new System.Drawing.Size(1141, 720);
             this.matrixViewer.TabIndex = 23;
             this.matrixViewer.Visible = false;
-            // 
-            // imageZoomToogle
-            // 
-            this.imageZoomToogle.Location = new System.Drawing.Point(2, 559);
-            this.imageZoomToogle.Name = "imageZoomToogle";
-            this.imageZoomToogle.Size = new System.Drawing.Size(110, 34);
-            this.imageZoomToogle.TabIndex = 24;
-            this.imageZoomToogle.Text = "Amplificar";
-            this.imageZoomToogle.UseVisualStyleBackColor = true;
-            this.imageZoomToogle.Click += new System.EventHandler(this.imageZoomToogle_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.matrixViewer);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(1264, 729);
             this.Controls.Add(this.optionsPanel);
             this.Controls.Add(this.imageLoad);
+            this.Controls.Add(this.matrixViewer);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -355,6 +460,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.illuminanceTrackBar)).EndInit();
             this.optionsPanel.ResumeLayout(false);
             this.optionsPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.transitionSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.matrixViewer)).EndInit();
             this.ResumeLayout(false);
 
@@ -391,6 +497,13 @@
         private System.Windows.Forms.Button imageShowMatrix;
         private System.Windows.Forms.DataGridView matrixViewer;
         private System.Windows.Forms.Button imageZoomToogle;
+        private System.Windows.Forms.Button transitionApply;
+        private System.Windows.Forms.TrackBar transitionSlider;
+        private System.Windows.Forms.Label transitionLabel;
+        private System.Windows.Forms.Button transitionLoadSecond;
+        private System.Windows.Forms.Button imageRotate90;
+        private System.Windows.Forms.Button imageHorizFlip;
+        private System.Windows.Forms.Button imageVertFlip;
     }
 }
 
